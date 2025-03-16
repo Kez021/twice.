@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWICE Fan Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffecf4;
+            color: #ff4d94;
+            margin-top: 50px;
+        }
+        .container {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            background-color: #ff4d94;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: #ff80b3;
+        }
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 20px;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            text-align: center;
+        }
+        img, video {
+            max-width: 100%;
+            border-radius: 10px;
+            display: none;
+        }
+        #lyrics {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to TWICE Fan Page! 💖</h1>
+        <div class="sections">
+            <div class="section">
+                <button onclick="showPhoto()">Show Random TWICE Photo 📸</button>
+                <img id="photo" src="" alt="TWICE Photo">
+            </div>
+            <div class="section">
+                <button onclick="showLyrics()">Show Random Lyrics 🎶</button>
+                <p id="lyrics"></p>
+            </div>
+            <div class="section">
+                <button onclick="showVideo()">Show TWICE Video 🎥</button>
+                <video id="video" controls>
+                    <source src="https://i.imgur.com/6slHTUC.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const photos = [
+            "https://i.imgur.com/4nxbvEh.jpg",
+            "https://i.imgur.com/g7Cs0dv.jpg",
+            "https://imgur.com/Sk48EPH.jpg",
+            "https://imgur.com/wl3C5yC.jpg",
+            "https://imgur.com/GMpQepQ.jpg"
+        ];
+
+        const lyrics = [
+            "Like OOH-AHH~ 🎶",
+            "Shy shy shy! 🎶",
+            "Cheer up baby~ 🎵",
+            "TT~ Just like TT~ 😭",
+            "Knock knock knock on my door~ 🚪",
+            "Signal 보내 Signal~ 🚀",
+            "Likey likey likey likey du ru du ru~ 💖",
+            "What is Love?~ 🎶",
+            "Yes or Yes?~ 💕",
+            "Fancy~ You~ 🌆",
+            "Feel Special, I'm so special~ 🎶",
+            "More & More, I want you~ 💕",
+            "I can't stop me, can't stop me~ 💖",
+            "Alcohol-free but I get drunk~ 🍇",
+            "Talk that Talk~ 💬",
+            "Set me free~ 🔥"
+        ];
+
+        function showPhoto() {
+            const randomIndex = Math.floor(Math.random() * photos.length);
+            const photoElement = document.getElementById("photo");
+            photoElement.src = photos[randomIndex];
+            photoElement.style.display = "block";
+        }
+
+        function showLyrics() {
+            const randomIndex = Math.floor(Math.random() * lyrics.length);
+            const lyricsElement = document.getElementById("lyrics");
+            lyricsElement.textContent = lyrics[randomIndex];
+            lyricsElement.style.display = "block";
+        }
+
+        function showVideo() {
+            const videoElement = document.getElementById("video");
+            videoElement.style.display = "block";
+            videoElement.play();
+        }
+    </script>
+</body>
+</html>
